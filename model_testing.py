@@ -3,14 +3,15 @@ import numpy as np
 import joblib
 from sklearn.model_selection import cross_validate
 from sklearn.model_selection import ShuffleSplit
+from pathlib import Path
 
 
-X_test = np.loadtxt('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/X_test.txt', delimiter=',')
-Y_test = np.loadtxt('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/Y_test.txt', delimiter=',')
+X_test = np.loadtxt(Path(Path.cwd(), 'project_data', 'X_test.txt'), delimiter=',')
+Y_test = np.loadtxt(Path(Path.cwd(), 'project_data', 'Y_test.txt'), delimiter=',')
 
 # загрузим обученную модель
 
-model_ridge = joblib.load('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/model.pkl')
+model_ridge = joblib.load(Path(Path.cwd(), 'model.pkl'))
 
 print(f'Train score = {model_ridge.score(X_test, Y_test):.2f}')
 

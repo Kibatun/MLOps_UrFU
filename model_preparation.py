@@ -2,12 +2,11 @@ import numpy as np
 from sklearn.linear_model import Ridge
 import joblib
 import os
+from pathlib import Path
 
 
-X_train = np.loadtxt('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/X_train.txt', delimiter=',')
-# X_test = np.loadtxt('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/X_test.txt', delimiter=',')
-Y_train = np.loadtxt('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/Y_train.txt', delimiter=',')
-# Y_test = np.loadtxt('C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/Y_test.txt', delimiter=',')
+X_train = np.loadtxt(Path(Path.cwd(), 'project_data', 'X_train.txt'), delimiter=',')
+Y_train = np.loadtxt(Path(Path.cwd(), 'project_data', 'Y_train.txt'), delimiter=',')
 
 # обучим модель с регуляризацией Ridge
 
@@ -20,7 +19,7 @@ print(f'Train score = {model_ridge.score(X_train, Y_train):.2f}')
 
 # сохраним обученную модель
 
-model_path = 'C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/model.pkl'
+model_path = Path(Path.cwd(), 'model.pkl')
 
 if os.path.isfile(model_path):
     os.remove(model_path)

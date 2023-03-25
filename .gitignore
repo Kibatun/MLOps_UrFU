@@ -1,10 +1,4 @@
 mashinelearning1_1.py
 .idea
 /venv
-project_data/X_test.txt
-project_data/X_train.txt
-project_data/Y_test.txt
-project_data/Y_train.txt
-project_data/raw_data.csv
-use_data.csv!
-project_data/use_data.csv
+/project_data
