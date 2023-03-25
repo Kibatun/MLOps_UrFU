@@ -2,9 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 import os
+from pathlib import Path
 
 
-import_path = 'C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/raw_data.csv'
+import_path = Path(Path.cwd(), 'project_data', 'raw_data.csv')
 df = pd.read_csv(import_path, delimiter=',')  # импорт
 
 df = df.drop_duplicates()  # удалим дубликаты
@@ -80,32 +81,28 @@ Y = df_one['Price(euro)'].values
 X_train, X_test, Y_train, Y_test = \
             train_test_split(X, Y.ravel(), test_size=0.3, random_state=42)
 
-X_train_output_path = \
-    'C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/X_train.txt'
+X_train_output_path = Path(Path.cwd(), 'project_data', 'X_train.txt')
 
 if os.path.isfile(X_train_output_path):
     os.remove(X_train_output_path)
 
 np.savetxt(X_train_output_path, X_train, delimiter=',', newline='\n')
 
-X_test_output_path = \
-    'C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/X_test.txt'
+X_test_output_path = Path(Path.cwd(), 'project_data', 'X_test.txt')
 
 if os.path.isfile(X_test_output_path):
     os.remove(X_test_output_path)
 
 np.savetxt(X_test_output_path, X_test, delimiter=',', newline='\n')
 
-Y_train_output_path = \
-    'C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/Y_train.txt'
+Y_train_output_path = Path(Path.cwd(), 'project_data', 'Y_train.txt')
 
 if os.path.isfile(Y_train_output_path):
     os.remove(Y_train_output_path)
 
 np.savetxt(Y_train_output_path, Y_train, delimiter=',', newline='\n')
 
-Y_test_output_path = \
-    'C:/Users/medov/Desktop/Study/Master/Актуальные предметы/MLops/ДЗ1/Y_test.txt'
+Y_test_output_path = Path(Path.cwd(), 'project_data', 'Y_test.txt')
 
 if os.path.isfile(Y_test_output_path):
     os.remove(Y_test_output_path)
