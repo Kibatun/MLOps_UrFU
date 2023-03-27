@@ -6,8 +6,8 @@ from sklearn.model_selection import ShuffleSplit
 from pathlib import Path
 
 
-X_test = np.loadtxt(Path(Path.cwd(), 'project_data', 'X_test.txt'), delimiter=',')
-Y_test = np.loadtxt(Path(Path.cwd(), 'project_data', 'Y_test.txt'), delimiter=',')
+X_test = np.loadtxt(Path(Path.cwd(), 'X_test.txt'), delimiter=',')
+Y_test = np.loadtxt(Path(Path.cwd(), 'Y_test.txt'), delimiter=',')
 
 # загрузим обученную модель
 
