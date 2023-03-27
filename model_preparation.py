@@ -5,8 +5,8 @@ import os
 from pathlib import Path
 
 
-X_train = np.loadtxt(Path(Path.cwd(), 'project_data', 'X_train.txt'), delimiter=',')
-Y_train = np.loadtxt(Path(Path.cwd(), 'project_data', 'Y_train.txt'), delimiter=',')
+X_train = np.loadtxt(Path(Path.cwd(), 'X_train.txt'), delimiter=',')
+Y_train = np.loadtxt(Path(Path.cwd(), 'Y_train.txt'), delimiter=',')
 
 # обучим модель с регуляризацией Ridge
 

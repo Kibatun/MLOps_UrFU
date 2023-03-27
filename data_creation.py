@@ -7,7 +7,7 @@ import_path = Path(Path.cwd(), 'initial_data_source', 'cars_moldova.csv')
 
 df = pd.read_csv(import_path, delimiter=',')  # импортируем данные из источника
 
-output_path = Path(Path.cwd(), 'project_data', 'raw_data.csv')
+output_path = Path(Path.cwd(), 'raw_data.csv')
 
 if os.path.isfile(output_path):
     os.remove(output_path)
